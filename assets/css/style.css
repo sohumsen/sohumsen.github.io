@@ -20,6 +20,9 @@ body::before {
   position: fixed;
   background: #010e1b;
   background-size: cover;
+  /* background-image: url("https://i.imgur.com/VC03Kas.gif"); */
+
+ 
   left: 0;
   right: 0;
   top: 0;
