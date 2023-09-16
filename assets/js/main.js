@@ -7,25 +7,76 @@
 !(function($) {
   "use strict";
 
-  // Nav Menu
+  // // Nav Menu
+  // $(document).on('click', '.nav-menu a, .mobile-nav a', function(e) {
+  //   if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+  //     var hash = this.hash;
+  //     var target = $(hash);
+  //     if (target.length) {
+  //       e.preventDefault();
+
+  //       if ($(this).parents('.nav-menu, .mobile-nav').length) {
+  //         $('.nav-menu .active, .mobile-nav .active').removeClass('active');
+  //         $(this).closest('li').addClass('active');
+  //       }
+
+  //       if (hash == '#header') {
+  //         $('#header').removeClass('header-top');
+  //         $("section").removeClass('section-show');
+  //         return;
+  //       }
+
+  //       if (!$('#header').hasClass('header-top')) {
+  //         $('#header').addClass('header-top');
+  //         setTimeout(function() {
+  //           $("section").removeClass('section-show');
+  //           $(hash).addClass('section-show');
+  //         }, 350);
+  //       } else {
+  //         $("section").removeClass('section-show');
+  //         $(hash).addClass('section-show');
+  //       }
+
+  //       if ($('body').hasClass('mobile-nav-active')) {
+  //         $('body').removeClass('mobile-nav-active');
+  //         $('.mobile-nav-toggle i').toggleClass('icofont-navigation-menu icofont-close');
+  //         $('.mobile-nav-overly').fadeOut();
+  //       }
+
+  //       return false;
+
+  //     }
+  //   }
+  // });
+
   $(document).on('click', '.nav-menu a, .mobile-nav a', function(e) {
     if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
       var hash = this.hash;
       var target = $(hash);
       if (target.length) {
         e.preventDefault();
-
+  
+        // Update the URL with the hash without reloading the page
+        history.pushState(null, null, hash);
+  
+        // Scroll smoothly to the target section
+        $('html, body').animate({
+          scrollTop: target.offset().top
+        }, 1000, function() {
+          window.location.hash = hash; // Update the hash in the URL again after scrolling
+        });
+  
         if ($(this).parents('.nav-menu, .mobile-nav').length) {
           $('.nav-menu .active, .mobile-nav .active').removeClass('active');
           $(this).closest('li').addClass('active');
         }
-
+  
         if (hash == '#header') {
           $('#header').removeClass('header-top');
           $("section").removeClass('section-show');
           return;
         }
-
+  
         if (!$('#header').hasClass('header-top')) {
           $('#header').addClass('header-top');
           setTimeout(function() {
@@ -36,18 +87,74 @@
           $("section").removeClass('section-show');
           $(hash).addClass('section-show');
         }
-
+  
         if ($('body').hasClass('mobile-nav-active')) {
           $('body').removeClass('mobile-nav-active');
           $('.mobile-nav-toggle i').toggleClass('icofont-navigation-menu icofont-close');
           $('.mobile-nav-overly').fadeOut();
         }
-
-        return false;
-
       }
     }
   });
+
+  $(document).ready(function() {
+    // Your sample JSON data
+    var jsonData = [
+      {
+        "title": "Tesarrec",
+        "image": "assets/img/project/tesarrec.PNG",
+        "link": "https://tesarrec.web.app/"
+      },
+      {
+        "title": "Stonks",
+        "image": "assets/img/project/stonks.PNG",
+        "link": "https://stonk1.web.app/"
+      }, {
+        "title": "Xplore",
+        "image": "assets/img/project/xplore.png",
+        "link": "https://github.com/sohumsen/NewWalks"
+      } ,{
+        "title": "Evolve AI",
+        "image": "assets/img/project/evolve.PNG",
+        "link": "https://evolve-ai.vercel.app/"
+      },  {
+        "title": "Burger Builder",
+        "image": "assets/img/project/burger.PNG",
+        "link": "https://react-my-burger-e9e6e.web.app/"
+      },{
+        "title": "Masters Project",
+        "image": "assets/img/project/gan.jpg",
+        "link": "https://github.com/sohumsen/masters_project"
+      }
+    ];
+
+    // Function to generate HTML from JSON
+    function generateHTML(data) {
+      var html = '';
+
+      data.forEach(function(item) {
+        html += `
+        <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+          <center><h4>${item.title}</h4></center>
+          <div class="portfolio-wrap">
+          <div style="width: 100%; height: 300px; background-size: cover; background-position: center center; background-repeat: no-repeat; background-image: url('${item.image}');"></div>
+          <div class="portfolio-info">
+              <div class="portfolio-links">
+                <a href="${item.link}" data-gall="portfolioDetailsGallery" data-vbtype="iframe" class="venobox" title="Project Details"><i class="bx bx-info-circle"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>`;
+      });
+
+      return html;
+    }
+
+    // Append the generated HTML to a container, e.g., a div with id="portfolioContainer"
+    $('#portfolioContainer').append(generateHTML(jsonData));
+});
+
+  
 
   // Activate/show sections on load with hash links
   if (window.location.hash) {
