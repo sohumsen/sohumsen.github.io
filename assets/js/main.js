@@ -195,6 +195,13 @@
         description:
           "This project refactors testability smells. It utilizes GANs for the task.",
       },
+      {
+        title: "Matching website",
+        image: "assets/img/project/match.png",
+        link: "https://matchy-rq7l.onrender.com",
+        description:
+          "Matching website connects users. It uses a unique algorithm for matching.",
+      },
     ];
 
     // <a href="${item.link}" data-gall="portfolioDetailsGallery" data-vbtype="iframe" class="venobox" title="Project Details"><i class="bx bx-info-circle"></i></a>
