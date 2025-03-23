@@ -202,6 +202,15 @@
         description:
           "Matching website connects users. It uses a unique algorithm for matching.",
       },
+      {
+        title: "Matching website",
+        image: "assets/img/project/daily.png",
+        link: "https://daily-prin.onrender.com",
+        description:
+          "Daily meditation, strength, and yoga exercises. It's a daily workout planner.",
+      }
+
+      
     ];
 
     // <a href="${item.link}" data-gall="portfolioDetailsGallery" data-vbtype="iframe" class="venobox" title="Project Details"><i class="bx bx-info-circle"></i></a>
