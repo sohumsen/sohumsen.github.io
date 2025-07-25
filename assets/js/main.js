@@ -204,7 +204,7 @@
           "Matching website connects users. It uses a unique algorithm for matching.",
       },
       {
-        title: "daily workout website",
+        title: "Daily workout website",
         image: "assets/img/project/daily.PNG",
         link: "https://daily-prin.onrender.com",
         description:
