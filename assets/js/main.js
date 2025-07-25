@@ -52,15 +52,17 @@
   function updateActiveNavLink(hash) {
     // Remove the 'active' class from all links
     $(".nav-menu li").removeClass("active");
-    
+
     // Add the 'active' class to the link that matches the hash
     if (hash && $(hash).length) {
-        $('.nav-menu li a[href="' + hash + '"]').parent().addClass("active");
+      $('.nav-menu li a[href="' + hash + '"]')
+        .parent()
+        .addClass("active");
     } else {
-        // If no hash is provided, activate the 'Home' link
-        $('.nav-menu li a[href="#header"]').parent().addClass("active");
+      // If no hash is provided, activate the 'Home' link
+      $('.nav-menu li a[href="#header"]').parent().addClass("active");
     }
-}
+  }
 
   $(document).on("click", ".nav-menu a, .mobile-nav a", function (e) {
     if (
@@ -93,7 +95,6 @@
         // }
         updateActiveNavLink(hash);
 
-
         if (hash == "#header") {
           $("#header").removeClass("header-top");
           $("section").removeClass("section-show");
@@ -121,35 +122,35 @@
       }
     }
   });
-  window.addEventListener("popstate", function(event) {
+  window.addEventListener("popstate", function (event) {
     var hash = window.location.hash;
     updateActiveNavLink(hash);
 
     if (hash) {
-        if ($(hash).length) {
-            if (hash == "#header") {
-                $("#header").removeClass("header-top");
-                $("section").removeClass("section-show");
-                return;
-            }
-
-            if (!$("#header").hasClass("header-top")) {
-                $("#header").addClass("header-top");
-                setTimeout(function() {
-                    $("section").removeClass("section-show");
-                    $(hash).addClass("section-show");
-                }, 350);
-            } else {
-                $("section").removeClass("section-show");
-                $(hash).addClass("section-show");
-            }
+      if ($(hash).length) {
+        if (hash == "#header") {
+          $("#header").removeClass("header-top");
+          $("section").removeClass("section-show");
+          return;
         }
+
+        if (!$("#header").hasClass("header-top")) {
+          $("#header").addClass("header-top");
+          setTimeout(function () {
+            $("section").removeClass("section-show");
+            $(hash).addClass("section-show");
+          }, 350);
+        } else {
+          $("section").removeClass("section-show");
+          $(hash).addClass("section-show");
+        }
+      }
     } else {
-        // Handle the situation where there's no hash (e.g., when you've navigated back to the initial state).
-        $("#header").removeClass("header-top");
-        $("section").removeClass("section-show");
+      // Handle the situation where there's no hash (e.g., when you've navigated back to the initial state).
+      $("#header").removeClass("header-top");
+      $("section").removeClass("section-show");
     }
-});
+  });
   $(document).ready(function () {
     // Your sample JSON data
     var jsonData = [
@@ -197,20 +198,25 @@
       },
       {
         title: "Matching website",
-        image: "assets/img/project/match.png",
+        image: "assets/img/project/match.PNG",
         link: "https://matchy-rq7l.onrender.com",
         description:
           "Matching website connects users. It uses a unique algorithm for matching.",
       },
       {
-        title: "Matching website",
-        image: "assets/img/project/daily.png",
+        title: "daily workout website",
+        image: "assets/img/project/daily.PNG",
         link: "https://daily-prin.onrender.com",
         description:
           "Daily meditation, strength, and yoga exercises. It's a daily workout planner.",
+      },
+      {
+        title: "TFL National rail uptime website",
+        image: "assets/img/project/uptime.png",
+        link: "https://transport-status.onrender.com/",
+        description:
+          "TFL National rail uptime website provides historical uptime on train statuses.",
       }
-
-      
     ];
 
     // <a href="${item.link}" data-gall="portfolioDetailsGallery" data-vbtype="iframe" class="venobox" title="Project Details"><i class="bx bx-info-circle"></i></a>
