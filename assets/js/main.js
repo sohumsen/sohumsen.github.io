@@ -219,7 +219,7 @@
       },
       {
         title: "Poker odds calculator",
-        image: "assets/img/project/poker.png",
+        image: "assets/img/project/poker.PNG",
         link: "https://pokerbot-88jr.onrender.com/",
         description:
           "Poker odds calculator helps players calculate their chances of winning.",
