@@ -216,6 +216,13 @@
         link: "https://transport-status.onrender.com/",
         description:
           "TFL National rail uptime website provides historical uptime on train statuses.",
+      },
+      {
+        title: "Poker odds calculator",
+        image: "assets/img/project/poker.png",
+        link: "https://pokerbot-88jr.onrender.com/",
+        description:
+          "Poker odds calculator helps players calculate their chances of winning.",
       }
     ];
 
