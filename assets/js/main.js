@@ -227,7 +227,7 @@
       {
         title: "Vacant houses",
         image: "assets/img/project/house.png",
-        link: "www.fixlet.co.uk",
+        link: "https://fixlet.co.uk/",
         description:
           "Finding vacant houses in the UK",
       }
