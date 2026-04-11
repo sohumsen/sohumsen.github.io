@@ -223,6 +223,13 @@
         link: "https://pokerbot-88jr.onrender.com/",
         description:
           "Poker odds calculator helps players calculate their chances of winning.",
+      },
+      {
+        title: "Vacant houses",
+        image: "assets/img/project/house.png",
+        link: "www.fixlet.co.uk",
+        description:
+          "Finding vacant houses in the UK",
       }
     ];
 
