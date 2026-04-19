@@ -155,6 +155,13 @@
     // Your sample JSON data
     var jsonData = [
       {
+        title: "Polymarket LLM Trading Bot",
+        image: "assets/img/project/ml.jpg",
+        link: "https://github.com/sohumsen",
+        description:
+          "LLM-driven trading agent ingesting live Polymarket prediction-market data with end-to-end order management, position sizing, and PnL tracking.",
+      },
+      {
         title: "Tesarrec",
         image: "assets/img/project/tesarrec.PNG",
         link: "https://tesarrec.web.app/",
@@ -190,11 +197,11 @@
           "Build your dream burger with Burger Builder. It's a customized burger experience.",
       },
       {
-        title: "Auto code refactoring",
+        title: "Code Testability Smell Classifier",
         image: "assets/img/project/gan.jpg",
         link: "https://github.com/sohumsen/masters_project",
         description:
-          "This project refactors testability smells. It utilizes GANs for the task.",
+          "MEng Thesis (UCL): Python pipeline mining Git histories via Designite and RefactoringMiner to label testability code smells into a training dataset for ML/NLP classification.",
       },
       {
         title: "Matching website",
