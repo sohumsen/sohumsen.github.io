@@ -155,13 +155,6 @@
     // Your sample JSON data
     var jsonData = [
       {
-        title: "Polymarket LLM Trading Bot",
-        image: "assets/img/project/ml.jpg",
-        link: "https://github.com/sohumsen",
-        description:
-          "LLM-driven trading agent ingesting live Polymarket prediction-market data with end-to-end order management, position sizing, and PnL tracking.",
-      },
-      {
         title: "Tesarrec",
         image: "assets/img/project/tesarrec.PNG",
         link: "https://tesarrec.web.app/",
@@ -237,6 +230,13 @@
         link: "https://fixlet.co.uk/",
         description:
           "Finding vacant houses in the UK",
+      },
+      {
+        title: "Polymarket LLM Trading Bot",
+        image: "assets/img/project/ml.jpg",
+        link: "https://github.com/sohumsen",
+        description:
+          "LLM-driven trading agent ingesting live Polymarket prediction-market data with end-to-end order management, position sizing, and PnL tracking.",
       }
     ];
 
